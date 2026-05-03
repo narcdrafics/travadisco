@@ -217,16 +217,19 @@
     justify-content: center;
   }
 
-  .product-visual svg.lock-icon {
-    width: 200px;
-    height: 200px;
-    filter: drop-shadow(0 0 40px rgba(232,0,29,.4));
+  .lock-image {
+    width: 100%;
+    height: auto;
+    max-width: 480px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    position: relative;
+    z-index: 2;
     animation: float 3.5s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(2deg); }
   }
 
   .ring {
@@ -594,36 +597,7 @@
       <div class="ring"></div>
       <div class="ring"></div>
       <div class="ring"></div>
-      <!-- Lock SVG illustration -->
-      <svg class="lock-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e8001d"/>
-            <stop offset="100%" stop-color="#7a000d"/>
-          </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <!-- Body -->
-        <rect x="30" y="90" width="140" height="100" rx="12" fill="url(#lg1)" filter="url(#glow)"/>
-        <!-- Shackle -->
-        <path d="M65 90 V60 A35 35 0 0 1 135 60 V90" fill="none" stroke="#cc0018" stroke-width="18" stroke-linecap="round"/>
-        <path d="M65 90 V60 A35 35 0 0 1 135 60 V90" fill="none" stroke="#ff3355" stroke-width="10" stroke-linecap="round" opacity="0.4"/>
-        <!-- Keyhole -->
-        <circle cx="100" cy="135" r="14" fill="rgba(0,0,0,0.5)"/>
-        <rect x="94" y="135" width="12" height="20" rx="4" fill="rgba(0,0,0,0.5)"/>
-        <!-- Sound waves -->
-        <g opacity="0.6">
-          <path d="M155 120 Q170 135 155 150" fill="none" stroke="#f5c800" stroke-width="3" stroke-linecap="round"/>
-          <path d="M163 110 Q185 135 163 160" fill="none" stroke="#f5c800" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-          <path d="M45 120 Q30 135 45 150" fill="none" stroke="#f5c800" stroke-width="3" stroke-linecap="round"/>
-          <path d="M37 110 Q15 135 37 160" fill="none" stroke="#f5c800" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-        </g>
-        <!-- Highlight -->
-        <rect x="45" y="100" width="50" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
-      </svg>
+      <img src="assets/trava-disco.png" alt="Trava Disco com Alarme" class="lock-image">
     </div>
   </div>
 </section>
